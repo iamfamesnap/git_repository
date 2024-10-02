@@ -3,7 +3,7 @@ import pandas as pd
 import streamlit as st
 import plotly.express as px  
 
-vehicles = pd.read_csv('../vehicles_us.csv')
+vehicles = pd.read_csv('./vehicles_us.csv')
 
 # Create one st. header with text
 st.title("Vehicles App with Pandas and Plotly")
