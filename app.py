@@ -23,9 +23,10 @@ if show_odometer:
 else: 
     histogram = px.histogram(vehicles, x='price', title='Vehicle Price Distribution')
     st.write("## Vehicle Price Distribution")
-    st.write("## The Vehicle Price histogram provides insights into how vehicles prices are spread, helping users understand key trends such as, most common price ranges for vehicles, whether their selection contains more expensive or affordable vehicles as it pertains to their own budget, or determining the pricing strategy of vehicles based on market trends. Understanding which price points are most common helps identify where the demand or supply of vehicles lies. Users looking to sell vehicles can use this data to competitively price their vehicles. Buyers can use the data to quickly spot potential bargains.")
-
+   
 st.plotly_chart(histogram)
+
+ st.write("## The Vehicle Price histogram provides insights into how vehicles prices are spread, helping users understand key trends such as, most common price ranges for vehicles, whether their selection contains more expensive or affordable vehicles as it pertains to their own budget, or determining the pricing strategy of vehicles based on market trends. Understanding which price points are most common helps identify where the demand or supply of vehicles lies. Users looking to sell vehicles can use this data to competitively price their vehicles. Buyers can use the data to quickly spot potential bargains.")
 
 scatter_plot = px.scatter(vehicles,
                           x='odometer',
