@@ -19,14 +19,16 @@ show_odometer = st.checkbox('Show Odometer Distribution')
 if show_odometer:
     histogram = px.histogram(vehicles, x='odometer', title='Vehicle Odometer Distribution')
     st.write("## Vehicle Odometer Distribution")
-    st.write("## The histogram is designed to visualize the distribution of vehicle odometer readings(mileage) in the dataset. This provides insights into how mileage varies across listed vehicles, helping users understand patterns like typical mileage range or whether a vehicle has high or low mileage.")
 else: 
     histogram = px.histogram(vehicles, x='price', title='Vehicle Price Distribution')
     st.write("## Vehicle Price Distribution")
    
 st.plotly_chart(histogram)
 
-st.write("## The Vehicle Price histogram provides insights into how vehicles prices are spread, helping users understand key trends such as, most common price ranges for vehicles, whether their selection contains more expensive or affordable vehicles as it pertains to their own budget, or determining the pricing strategy of vehicles based on market trends. Understanding which price points are most common helps identify where the demand or supply of vehicles lies. Users looking to sell vehicles can use this data to competitively price their vehicles. Buyers can use the data to quickly spot potential bargains.")
+if show_odometer:
+    st.write("The histogram is designed to visualize the distribution of vehicle odometer readings(mileage) in the dataset. This provides insights into how mileage varies across listed vehicles, helping users understand patterns like typical mileage range or whether a vehicle has high or low mileage.")
+else: 
+    st.write("## The Vehicle Price histogram provides insights into how vehicles prices are spread, helping users understand key trends such as, most common price ranges for vehicles, whether their selection contains more expensive or affordable vehicles as it pertains to their own budget, or determining the pricing strategy of vehicles based on market trends. Understanding which price points are most common helps identify where the demand or supply of vehicles lies. Users looking to sell vehicles can use this data to competitively price their vehicles. Buyers can use the data to quickly spot potential bargains.")
 
 scatter_plot = px.scatter(vehicles, x='odometer', y='price', title='Price vs Odometer', labels={'odometer': 'Odometer (Mileage)', 'price': 'Price (USD)'}, color='condition') # hover_data=['model', 'year']
 st.write("## Scatter Plot: Price vs Odometer")
