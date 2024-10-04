@@ -34,7 +34,7 @@ scatter_plot = px.scatter(vehicles, x='odometer', y='price', title='Price vs Odo
 st.write("## Scatter Plot: Price vs Odometer")
 st.plotly_chart(scatter_plot)
 
-st.write("## The scatter plot shows the relationship between price and odometer. Points are colored by vehicle condition to provide more context on the condition of each vehicle. Additional information, such as model and year can be displayed by hovering over points")
+st.write(" The scatter plot shows the relationship between price and odometer. Points are colored by vehicle condition to provide more context on the condition of each vehicle. Additional information, such as model and year can be displayed by hovering over points")
 
 
 
